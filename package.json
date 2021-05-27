@@ -1,0 +1,34 @@
+{
+  "name": "neollector",
+  "version": "0.0.10",
+  "description": "A Modeling and OGM Set Of Tools For Neo4j",
+  "author": "Ali Souri <ap.alisouri@gmail.com> (https://www.linkedin.com/in/ali-souri-4521926b/)",
+  "license": "UNLICENSED",
+  "scripts": {
+    "eslint:test": "node_modules/.bin/eslint --cache -c .eslintrc.js ./core/* && node_modules/.bin/eslint --cache -c .eslintrc.js ./driver/* && node_modules/.bin/eslint --cache -c .eslintrc.js ./lib/* &&node_modules/.bin/eslint --cache -c .eslintrc.js ./query/* && node_modules/.bin/eslint --cache -c .eslintrc.js ./schema/* && node_modules/.bin/eslint --cache -c .eslintrc.js ./test/*",
+    "eslint:fix": "node_modules/.bin/eslint --cache --fix -c .eslintrc.js ./*",
+    "precommit": "npm run eslint:fix",
+    "prepush": "npm run test",
+    "test": "npm run eslint:test && node_modules/.bin/nyc node_modules/.bin/mocha test/**/*.spec.js"
+  },
+  "dependencies": {
+    "conga-annotations": "1.0.0",
+    "jsonschema": "1.2.4",
+    "lodash": "4.17.10",
+    "mocha": "5.2.0",
+    "neo4j-driver": "1.5.0",
+    "nyc": "12.0.2",
+    "path": "0.12.7",
+    "properties-reader": "0.0.16",
+    "randomstring": "1.1.5",
+    "uuid": "3.2.1"
+  },
+  "devDependencies": {
+    "chai": "4.0.2",
+    "eslint": "4.6.1",
+    "husky": "0.14.3",
+    "sinon": "2.3.6",
+    "sinon-chai": "2.11.0",
+    "supertest": "3.0.0"
+  }
+}
